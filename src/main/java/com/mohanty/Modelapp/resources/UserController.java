@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mohanty.Modelapp.entity.UserRest;
+import com.mohanty.Modelapp.exception.UserServiceException;
 import com.mohanty.Modelapp.repository.UserRepository;
 
 @RestController
@@ -34,6 +35,12 @@ public class UserController {
 	public ResponseEntity<List<UserRest>> getUsers(@RequestParam(value = "page", defaultValue = "1") int page, 
 												@RequestParam(value = "limit" ,  defaultValue = "20") int limit) {
 
+		//Trouble code
+		/*
+		 * String testStr = null; int length = testStr.length();
+		 */
+		if(true) throw new UserServiceException("Custom Exception class thrown");
+		
 		return new ResponseEntity<>(repository.findAll(), HttpStatus.OK);
 	}
 	

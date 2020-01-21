@@ -1,0 +1,1 @@
+insert into user_rest_data (first_name,last_name,user_email, user_password)  values ('Ashutosh' ,'Mohanty' ,'abc@gmail.com', '123@321');

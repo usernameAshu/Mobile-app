@@ -54,4 +54,18 @@ public class MobileAppExceptionHandler extends ResponseEntityExceptionHandler {
 		return new ResponseEntity<>(errRes, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
 
 	}
+	
+	@ExceptionHandler(value = { UserNotFoundException.class })
+	public ResponseEntity<Object> handleUserNotFoundException(UserNotFoundException exc, WebRequest req) {
+
+		String errorMessageDescription = exc.getLocalizedMessage();
+
+		if (errorMessageDescription == null)
+			errorMessageDescription = exc.toString();
+
+		ErrorResponse errRes = new ErrorResponse(new Date(), errorMessageDescription);
+
+		return new ResponseEntity<>(errRes, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
+
+	}
 }

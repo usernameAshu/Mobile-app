@@ -1,8 +1,6 @@
 package com.mohanty.Modelapp.resources;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 
 import javax.validation.Valid;
 
@@ -22,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mohanty.Modelapp.entity.UserRest;
 import com.mohanty.Modelapp.exception.UserNotFoundException;
-import com.mohanty.Modelapp.exception.UserServiceException;
 import com.mohanty.Modelapp.repository.UserRepository;
 
 @RestController
